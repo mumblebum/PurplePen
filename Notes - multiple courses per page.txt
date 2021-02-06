@@ -1,0 +1,4 @@
+Specify number of courses per page? Fixed layouts? 2x1, 2x2, 3x2, 2 and 1
+Use course print area definitions and try to fit to page?
+
+Create list of page definitions as currently but then print all to different parts of single page?

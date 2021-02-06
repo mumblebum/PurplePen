@@ -127,6 +127,7 @@ namespace PurplePen
             // Appearance 
             settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);
             settings.PrintMapExchangesOnOneMap = checkBoxMergeParts.Checked;
+            settings.PrintMultipleCoursesPerPage = multipleCoursesPerPage.Checked;
             settings.ColorModel = (ColorModel)(comboBoxColorModel.SelectedIndex + 1);
 
             // Which folder?

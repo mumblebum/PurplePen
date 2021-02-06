@@ -84,6 +84,7 @@ namespace PurplePen
             this.filesLabel = new System.Windows.Forms.Label();
             this.comboBoxFileFormat = new System.Windows.Forms.ComboBox();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.multipleCoursesPerPage = new System.Windows.Forms.CheckBox();
             this.coursesGroupBox.SuspendLayout();
             this.groupBoxAppearance.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -110,6 +111,7 @@ namespace PurplePen
             // 
             // courseSelector
             // 
+            this.courseSelector.Filter = null;
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;
@@ -118,6 +120,7 @@ namespace PurplePen
             // 
             // groupBoxAppearance
             // 
+            this.groupBoxAppearance.Controls.Add(this.multipleCoursesPerPage);
             this.groupBoxAppearance.Controls.Add(this.checkBoxMergeParts);
             this.groupBoxAppearance.Controls.Add(this.tableLayoutPanel4);
             this.groupBoxAppearance.Controls.Add(this.comboBoxMultiPage);
@@ -260,6 +263,12 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.folderBrowserDialog, "folderBrowserDialog");
             // 
+            // multipleCoursesPerPage
+            // 
+            resources.ApplyResources(this.multipleCoursesPerPage, "multipleCoursesPerPage");
+            this.multipleCoursesPerPage.Name = "multipleCoursesPerPage";
+            this.multipleCoursesPerPage.UseVisualStyleBackColor = true;
+            // 
             // CreatePdfCourses
             // 
             resources.ApplyResources(this, "$this");
@@ -312,5 +321,6 @@ namespace PurplePen
         private System.Windows.Forms.Label filesLabel;
         private System.Windows.Forms.ComboBox comboBoxFileFormat;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
+        private System.Windows.Forms.CheckBox multipleCoursesPerPage;
     }
 }

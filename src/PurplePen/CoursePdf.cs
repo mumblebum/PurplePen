@@ -192,6 +192,7 @@ namespace PurplePen
             List<CoursePage> pages = LayoutPages(courseDesignators);
             PdfWriter pdfWriter = new PdfWriter(Path.GetFileNameWithoutExtension(fileName), coursePdfSettings.ColorModel == ColorModel.CMYK);
 
+            IGraphicsTarget grTarget = null;
             foreach (CoursePage page in pages) {
                 CoursePage pageToDraw = page;
 
@@ -202,7 +203,6 @@ namespace PurplePen
                 if (controller.UpdateProgressDialog(string.Format(MiscText.CreatingFile, Path.GetFileName(fileName)), (double)currentPage / (double)totalPages))
                     throw new Exception(MiscText.CancelledByUser);
 
-                IGraphicsTarget grTarget;
                 PdfImporter pdfImporter = null;
 
                 if (IsPdfMap) {
@@ -232,12 +232,20 @@ namespace PurplePen
                     mapDisplay.SetMapFile(MapType.None, null);
                 }
                 else {
-                    grTarget = pdfWriter.BeginPage(paperSize);
+                    if (page.startNewPage || grTarget == null)
+                    {
+                        if (grTarget != null)
+                        {
+                            pdfWriter.EndPage(grTarget);
+                            grTarget.Dispose();
+                            grTarget = null;
+                        }
+                      grTarget = pdfWriter.BeginPage(paperSize);
+                    }
+
                 }
 
                 DrawPage(grTarget, pageToDraw);
-                pdfWriter.EndPage(grTarget);
-                grTarget.Dispose();
 
                 if (pdfImporter != null) {
                     pdfImporter.Dispose();
@@ -245,6 +253,12 @@ namespace PurplePen
                 }
 
                 currentPage += 1;
+            }
+            if (grTarget != null)
+            {
+                pdfWriter.EndPage(grTarget);
+                grTarget.Dispose();
+                grTarget = null;
             }
 
             pdfWriter.Save(fileName);
@@ -256,7 +270,33 @@ namespace PurplePen
             CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance,
                                                                 coursePdfSettings.CropLargePrintArea);
 
-            return pageLayout.LayoutPages(courseDesignators);
+            List<CoursePage> pages = pageLayout.LayoutPages(courseDesignators);
+            if (coursePdfSettings.PrintMultipleCoursesPerPage)
+            {
+                // position pages on single piece of paper
+                bool bFirst = true;
+                float printLeft = 0;
+                foreach (CoursePage page in pages)
+                {
+                    if (bFirst)
+                    {
+                        bFirst = false;
+                        page.startNewPage = true;
+                        printLeft = page.printRectangle.Right;
+                    }
+                    else
+                    {
+                        page.startNewPage = false;
+                        page.printRectangle.X = printLeft;
+                    }
+                }
+            }
+            return pages;
+        }
+
+        private void PositionPages(List<CoursePage> pages)
+        {
+
         }
 
         private CoursePage PdfNonScaledPage(CourseDesignator designator)
@@ -330,6 +370,7 @@ namespace PurplePen
 
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
         public bool PrintMapExchangesOnOneMap = false;
+        public bool PrintMultipleCoursesPerPage = false;
         public PdfFileCreation FileCreation = PdfFileCreation.FilePerCourse; 
         public ColorModel ColorModel = ColorModel.CMYK;
 

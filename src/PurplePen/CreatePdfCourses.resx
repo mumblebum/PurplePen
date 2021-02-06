@@ -175,7 +175,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=3.0.0.210, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=3.3.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -207,8 +207,35 @@
   <data name="&gt;&gt;coursesGroupBox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="multipleCoursesPerPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="multipleCoursesPerPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 109</value>
+  </data>
+  <data name="multipleCoursesPerPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 24</value>
+  </data>
+  <data name="multipleCoursesPerPage.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="multipleCoursesPerPage.Text" xml:space="preserve">
+    <value>Print multiple courses per page</value>
+  </data>
+  <data name="&gt;&gt;multipleCoursesPerPage.Name" xml:space="preserve">
+    <value>multipleCoursesPerPage</value>
+  </data>
+  <data name="&gt;&gt;multipleCoursesPerPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;multipleCoursesPerPage.Parent" xml:space="preserve">
+    <value>groupBoxAppearance</value>
+  </data>
+  <data name="&gt;&gt;multipleCoursesPerPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="checkBoxMergeParts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 86</value>
+    <value>15, 84</value>
   </data>
   <data name="checkBoxMergeParts.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 24</value>
@@ -229,7 +256,7 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;checkBoxMergeParts.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="tableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -295,7 +322,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 122</value>
+    <value>15, 131</value>
   </data>
   <data name="tableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -316,7 +343,7 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelColorModel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxColorModel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
@@ -346,7 +373,7 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;comboBoxMultiPage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="labelAppearanceInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -373,7 +400,7 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;labelAppearanceInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="groupBoxAppearance.Location" type="System.Drawing.Point, System.Drawing">
     <value>266, 12</value>
@@ -592,7 +619,7 @@
     <value>3, 7</value>
   </data>
   <data name="fileNamePrefixLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 15</value>
+    <value>75, 15</value>
   </data>
   <data name="fileNamePrefixLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -616,10 +643,10 @@
     <value>Left, Right</value>
   </data>
   <data name="filenamePrefixTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 3</value>
+    <value>84, 3</value>
   </data>
   <data name="filenamePrefixTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 23</value>
+    <value>140, 23</value>
   </data>
   <data name="filenamePrefixTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -682,10 +709,10 @@
     <value>One per course part/variation</value>
   </data>
   <data name="comboBoxFileFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 34</value>
+    <value>84, 33</value>
   </data>
   <data name="comboBoxFileFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 23</value>
+    <value>140, 23</value>
   </data>
   <data name="comboBoxFileFormat.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -781,6 +808,6 @@
     <value>CreatePdfCourses</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.0.0.210, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.3.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
